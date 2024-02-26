@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './App.css'; // Importing CSS file for styling
 
-function XModal() {
+function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -51,9 +52,9 @@ function XModal() {
   };
 
   return (
-    <div>
+    <div className="xmodal-container">
       <h1>User Details Modal</h1>
-      <button onClick={openModal}>Open Form</button>
+      <button className="open-button" onClick={openModal}>Open Form</button>
       {isOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={handleModalClick}>
@@ -68,7 +69,7 @@ function XModal() {
               <input type="date" id="dob" value={dob} onChange={(e) => setDob(e.target.value)} />
               <button type="submit" className="submit-button">Submit</button>
             </form>
-            {errorMessage && <p>{errorMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
         </div>
       )}
@@ -76,4 +77,4 @@ function XModal() {
   );
 }
 
-export default XModal;
+export default App;
