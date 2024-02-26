@@ -38,8 +38,6 @@ function App() {
       setErrorMessage('Invalid date of birth. Please enter a past date.');
       return;
     }
-    // Here you can handle form submission or any further processing
-    // For simplicity, let's just reset the form
     setUsername('');
     setEmail('');
     setPhone('');
